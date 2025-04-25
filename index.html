@@ -51,6 +51,14 @@
     The system uses an Arduino Uno to control two DC motors via an L298N motor driver and a 28BYJ-48 stepper motor. Four operational modes are selected via push buttons connected to digital input pins. The stepper motor is used to rotate the blinds, while the DC motors control the raise/lower functions. A photoresistor detects ambient light, triggering blind adjustment when necessary. The wiring includes current-limiting resistors, pull-down resistors for input stability, and power is supplied via USB or external adapter.
   </p>
 
+  <h2>Design and Build Process</h2>
+  <p>
+    The blinds cord was attached to a 3D printed spool with superglue, and this spool was connected to a DC motor at each end for controlling the blinds' vertical movement. The blinds themselves are mounted using a 3-prong over-the-door hook, with a hardboard backing for added stability. The Arduino, breadboards, and all circuitry outside of the stepper motor are securely mounted to the backing board using superglue and mounting tape. The stepper motor is attached to the blinds to enable rotation, allowing the blinds to turn based on the input received from the Arduino.
+  </p>
+  <p>
+    The Arduino is connected to my laptop via USB for programming, but a backup battery supply is mounted to the board in case external power is needed. The system is controlled via three buttons mounted to a breadboard, which is also attached to the backing board. The <code>BAE305Project.ino</code> file is used to initialize the system and control the different operational modes by processing button presses and activating the motors.
+  </p>
+
   <h2>Testing Description</h2>
   <p>
     The system was tested using a multimeter, oscilloscope (Tektronix TBS 1052B), and USB power supply. Buttons were individually tested for signal integrity, and motor response was verified in each mode. Light sensitivity was tested by varying light exposure to the photoresistor. Limitations in the testing arose from inconsistent motor power under battery use and occasional timing conflicts in mode switching.
@@ -78,7 +86,7 @@
   <h2>System Schematic</h2>
   <div class="image-container">
     <!-- Add an image of your schematic here -->
-    <img src="" alt="System Schematic" width="600">
+    <img src="schematic.png" alt="System Schematic" width="600">
     <p>Click to view or download the full schematic.</p>
   </div>
 
@@ -86,7 +94,6 @@
   <div class="file-links">
     <!-- Add links to your 3D print files (e.g., STL files) -->
     <p><a href="path-to-your-3d-print-file1.stl" target="_blank">Download 3D Print File 1 (Blinds Cord Spool)</a></p>
-    <p><a href="path-to-your-3d-print-file2.stl" target="_blank">Download 3D Print File 2</a></p>
   </div>
 
 </body>
