@@ -1,38 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Automated Blinds Project</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
-    h1, h2 { color: #2c3e50; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      max-width: 900px;
+      color: #2c3e50;
+    }
+    h1, h2 {
+      color: #34495e;
+    }
+    h1 {
+      font-size: 2.2em;
+    }
+    h2 {
+      margin-top: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    code {
+      background: #ecf0f1;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .file-links {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>Automated Blinds Control System</h1>
+
+  <h1>Automated Blinds Project</h1>
+
   <h2>Summary</h2>
-  <p>This project aimed to design and prototype an automated window blind system capable of raising, lowering, and rotating based on manual input and ambient light levels. The intent was to improve energy efficiency and user convenience in home settings through automation. The blinds are controlled by an Arduino microcontroller, DC motors, and a stepper motor, with input from a light sensor. Although remote control functionality was intended, it is currently non-operational. This system demonstrates a functional prototype with manual override and automatic light response, serving as a foundational system for future improvements in smart home integration.</p>
+  <p>
+    This project was developed as part of a circuits course using the Scrum methodology. The goal was to design and build an automated blinds system that can raise, lower, and rotate the blinds manually or in response to ambient light levels. The system is powered by an Arduino and includes DC motors, a stepper motor, and a light sensor. While the remote-control functionality is not yet operational, the primary system modes are functional through programmed button inputs. This project provides a starting point for future development of smart, energy-conscious window blind systems.
+  </p>
 
   <h2>Design Description</h2>
-  <p> 
-- Arduino Uno (or compatible)</br>
-- L298N Motor Driver</br>
-- 2x DC Motors (for lift/lower functions)</br>
-- 1x Stepper Motor (for tilting slats)/<br>
-- Light Sensor (LDR or similar)</br>
-- Pushbuttons or switches (for manual control)</br>
-- Power source (e.g., 9V or 12V regulated)</p>
+  <p>
+    The system uses an Arduino Uno to control two DC motors via an L298N motor driver and a 28BYJ-48 stepper motor. Four operational modes are selected via push buttons connected to digital input pins. The stepper motor is used to rotate the blinds, while the DC motors control the raise/lower functions. A photoresistor detects ambient light, triggering blind adjustment when necessary. The wiring includes current-limiting resistors, pull-down resistors for input stability, and power is supplied via USB or external adapter.
+  </p>
 
   <h2>Testing Description</h2>
-  <p>[Describe how you tested your system here]</p>
+  <p>
+    The system was tested using a multimeter, oscilloscope (Tektronix TBS 1052B), and USB power supply. Buttons were individually tested for signal integrity, and motor response was verified in each mode. Light sensitivity was tested by varying light exposure to the photoresistor. Limitations in the testing arose from inconsistent motor power under battery use and occasional timing conflicts in mode switching.
+  </p>
 
   <h2>Design Decision Discussion</h2>
-  <p>[Describe the key choices made during design here]</p>
+  <p>
+    Key design decisions included using separate control pins for each motor direction and dedicating a mode for light-based automation. We chose the L298N driver for its simplicity and compatibility with the Arduino. Stepper motor implementation required a custom rotation algorithm to achieve precise open/close angles. Future engineers may consider integrating wireless modules (e.g., ESP8266) and adding limit switches or encoders for better motor control and safety.
+  </p>
 
   <h2>Test Results Discussion</h2>
-  <p>[Summarize what worked, what didn't, and any limitations here]</p>
+  <p>
+    The system successfully demonstrated mode-based motor control, with three manual modes functioning reliably. The photoresistor trigger mode functioned under controlled lighting but may require calibration in variable environments. Remote control connectivity remains incomplete and presents a development opportunity. Overall, the design works well for a simple proof-of-concept system but lacks robustness for long-term or commercial deployment without further development.
+  </p>
 
   <h2>Testing Results</h2>
-  <p>[Add a bullet list or short table with your test data or observations]</p>
+  <ul>
+    <li>DC motors rotate blinds up and down correctly when buttons are pressed</li>
+    <li>Stepper motor rotates 4x to tilt blinds open and closed</li>
+    <li>Light sensor activates blind tilt when light drops below a set threshold</li>
+    <li>All four modes operate as intended with clear visual feedback</li>
+    <li>Remote control function not yet implemented</li>
+  </ul>
+
+  <h2>System Schematic</h2>
+  <div class="image-container">
+    <!-- Add an image of your schematic here -->
+    <img src="path-to-your-schematic-image.png" alt="System Schematic" width="600">
+    <p>Click to view or download the full schematic.</p>
+  </div>
+
+  <h2>3D Print Files for Blinds Cord Spool</h2>
+  <div class="file-links">
+    <!-- Add links to your 3D print files (e.g., STL files) -->
+    <p><a href="path-to-your-3d-print-file1.stl" target="_blank">Download 3D Print File 1 (Blinds Cord Spool)</a></p>
+    <p><a href="path-to-your-3d-print-file2.stl" target="_blank">Download 3D Print File 2</a></p>
+  </div>
+
 </body>
 </html>
